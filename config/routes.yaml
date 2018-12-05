@@ -5,3 +5,7 @@
 try_stuff_output:
   path: /try/output
   controller: App\Controller\TryStuffController::index
+  
+try_stuff_new_task:
+  path: /try/new_task
+  controller: App\Controller\TryStuffController::new_task
