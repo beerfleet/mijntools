@@ -2,8 +2,21 @@
 
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
+{% block head %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>LyNX</h1>
+      <sub>Keep track of all kinds of links</sub>
+    </div>
+  </div>
+{% endblock head %}
+
 {% block body %}
-
-  <h1>Hello {{ controller_name }}! </h1>
-
+  <form action="#">
+    <div class="form-group">
+      <label for="add-link">Add link</label>
+      <input type="text" class="form-control" id="add-link">
+    </div>
+    <button type="submit" class="btn btn-primary">Add link</button>
+  </form>
 {% endblock %}
