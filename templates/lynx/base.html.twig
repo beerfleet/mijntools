@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}LyNX!{% endblock %}</title>
-        {% block stylesheets %}
-          
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}LyNX!{% endblock %}</title>
+    {% block stylesheets %}
+      <link href="{{ asset('bootstrap/css/bootstrap.css') }}" rel="stylesheet" />
+      <link href="{{ asset('bootstrap/css/bootstrap-reboot.css') }}" rel="stylesheet" />
+      <link href="{{ asset('bootstrap/css/bootstrap-grid.css') }}" rel="stylesheet" />
+      <link href="{{ asset('css/lynx.css') }}" rel="stylesheet" />
+    {% endblock %}
+  </head>
+  <body class="container">
+  {% block body %}{% endblock %}
+  {% block javascripts %}
+    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
+  {% endblock %}
+</body>
 </html>
