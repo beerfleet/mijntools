@@ -2,6 +2,7 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
+# try_stuff
 try_stuff_output:
   path: /try/output
   controller: App\Controller\TryStuffController::index
@@ -9,3 +10,9 @@ try_stuff_output:
 try_stuff_new_task:
   path: /try/new_task
   controller: App\Controller\TryStuffController::new_task
+ 
+
+# LYNX APP
+lynx_test:
+  path: /lynx/test
+  controller: App\Controller\LynxController::index
