@@ -12,10 +12,10 @@
 {% endblock head %}
 
 {% block body %}
-  <form action="#">
+  <form action="{{ path("lynx_post_link") }}" method="POST">
     <div class="form-group">
-      <label for="add-link">Add link</label>
-      <input type="text" class="form-control" id="add-link">
+      <label for="new-link">Add link</label>
+      <input type="text" class="form-control" id="new-link">
     </div>
     <button type="submit" class="btn btn-primary">Add link</button>
   </form>

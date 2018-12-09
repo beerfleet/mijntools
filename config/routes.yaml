@@ -13,6 +13,12 @@ try_stuff_new_task:
  
 
 # LYNX APP
-lynx_test:
+lynx_main:
   path: /lynx
   controller: App\Controller\LynxController::index
+  methods: [GET]
+  
+lynx_post_link:
+  path: /lynx
+  controller: App\Controller\LynxController::process_add_link
+  methods: [POST]
