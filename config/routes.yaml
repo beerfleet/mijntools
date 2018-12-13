@@ -10,15 +10,11 @@ try_stuff_output:
 try_stuff_new_task:
   path: /try/new_task
   controller: App\Controller\TryStuffController::new_task
- 
 
-# LYNX APP
-lynx_main:
+ 
+# ----------------- LyNX
+lynx_new_link:
   path: /lynx
-  controller: App\Controller\LynxController::index
-  methods: [GET]
+  controller: App\Controller\LynxController::new_link
   
-lynx_post_link:
-  path: /lynx
-  controller: App\Controller\LynxController::process_add_link
-  methods: [POST]
+ 

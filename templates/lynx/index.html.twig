@@ -1,6 +1,6 @@
 {% extends 'lynx/base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello peeps!{% endblock %}
 
 {% block head %}
   <div class="jumbotron jumbotron-fluid">
@@ -11,12 +11,31 @@
   </div>
 {% endblock head %}
 
+{#
 {% block body %}
   <form action="{{ path("lynx_post_link") }}" method="POST">
     <div class="form-group">
       <label for="new-link">Add link</label>
-      <input type="text" class="form-control" id="new-link">
+      <input type="text" class="form-control" id="newlink">
     </div>
     <button type="submit" class="btn btn-primary">Add link</button>
   </form>
-{% endblock %}
+{% endblock %} 
+#}
+
+{% block body %}
+  {{ form_start(form, {'method': 'POST'} ) }}
+
+  <div class="form-group">
+    {{ form_label(form.url) }}
+    {{ form_errors(form.url) }}
+    {{ form_widget(form.url, {'attr': {'class': 'form-control'} }) }}
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Bewaar" class="form-control">
+  </div>
+
+  {{ form_end(form) }}
+{% endblock body %}
+
