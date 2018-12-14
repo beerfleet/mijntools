@@ -8,6 +8,21 @@ and open the template in the editor.
     Author     : jan
 */
 
-body, html {
-  
+.message-ok {
+  width: 100%;
+  background-color: #b1dfbb;
+  color: #1c7430;
+}
+
+.message-error {
+  border-radius: 4px;
+  width: 100%;
+  background-color: mistyrose;
+  color: #C82829;
+}
+
+.message-error ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 8px;
 }

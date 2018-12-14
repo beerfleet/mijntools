@@ -24,6 +24,9 @@ class LynxController extends AbstractController {
       $em = $this->getDoctrine()->getManager();
       $em->persist($link);
       $em->flush();
+      
+      // Stel boodschap in en redirect naar deze route
+      
     }
 
     return $this->render('lynx/index.html.twig', array(

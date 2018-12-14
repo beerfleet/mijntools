@@ -15,19 +15,30 @@
     {% endblock head %}
 
     <div class="container">
-      
-    {% block messages %}
-    {% endblock messages %}
-    
-    {% block body %}
-    {% endblock body %}
-    
+
+      {% block messages %}
+
+        <div class="message-ok">
+          {% block message_ok %}
+          {% endblock message_ok %}
+        </div>
+
+        <div class="message-error">
+          {% block message_error %}
+          {% endblock message_error %}
+        </div>
+
+      {% endblock messages %}
+
+      {% block body %}
+      {% endblock body %}
+
     </div>
 
-  {% block javascripts %}
-    <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
-  {% endblock %}
-</body>
+    {% block javascripts %}
+      <script src="{{ asset('js/jquery-3.3.1.js') }}"></script>
+      <script src="{{ asset('bootstrap/js/bootstrap.js') }}"></script>
+      <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
+    {% endblock %}
+  </body>
 </html>
