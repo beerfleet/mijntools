@@ -20,9 +20,10 @@ class LynxController extends AbstractController {
     
     if ($form->isSubmitted() && $form->isValid()) {      
       $link = $form->getData();
-      $link->setDateSet(date('Y-m-d H:i:s'));
-      
-      
+      $link->setDateSet(new \DateTime(date('Y-m-d H:i:s')));
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($link);
+      $em->flush();
     }
     
     return $this->render('lynx/index.html.twig', array(

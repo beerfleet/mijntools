@@ -9,20 +9,31 @@
 namespace App\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Description of Task
- *
- * @author jan
+ * @ORM\Entity(repositoryClass="App\Repository\LinkRepository")
  */
 class Link {
 
   /**
+   * @ORM\Id
+   * @ORM\GeneratedValue
+   * @ORM\Column(type="integer")
+   */
+  private $id;
+  
+  /**
    * @Assert\NotBlank(
    *  message = "Please fill out the Url field"
    * )
+   * @ORM\Column(type="string", length=1023)
    */
   private $url;
+  
+  /**
+   * @ORM\Column(type="datetime")
+   */
   private $dateSet;
 
   function getUrl() {
