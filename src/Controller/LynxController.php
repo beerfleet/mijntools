@@ -13,19 +13,19 @@ class LynxController extends AbstractController {
     $link = new Link();
 
     $form = $this->createFormBuilder($link)
-        ->add('url', TextType::class)        
+        ->add('url', TextType::class)
         ->getForm();
 
     $form->handleRequest($request);
-    
-    if ($form->isSubmitted() && $form->isValid()) {      
+
+    if ($form->isSubmitted() && $form->isValid()) {
       $link = $form->getData();
       $link->setDateSet(new \DateTime(date('Y-m-d H:i:s')));
       $em = $this->getDoctrine()->getManager();
       $em->persist($link);
       $em->flush();
     }
-    
+
     return $this->render('lynx/index.html.twig', array(
           'form' => $form->createView(),
     ));

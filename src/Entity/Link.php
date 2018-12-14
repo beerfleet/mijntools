@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\LinkRepository")
+ * @UniqueEntity("url")
  */
 class Link {
 
@@ -22,15 +23,15 @@ class Link {
    * @ORM\Column(type="integer")
    */
   private $id;
-  
+
   /**
    * @Assert\NotBlank(
    *  message = "Please fill out the Url field"
    * )
-   * @ORM\Column(type="string", length=1023)
+   * @ORM\Column(name="url", type="string", length=1023, unique=true)
    */
   private $url;
-  
+
   /**
    * @ORM\Column(type="datetime")
    */
@@ -50,6 +51,10 @@ class Link {
 
   function setDateSet($dateSet) {
     $this->dateSet = $dateSet;
+  }
+
+  function getId() {
+    return $this->id;
   }
 
 }
