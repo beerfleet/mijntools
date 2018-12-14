@@ -27,7 +27,7 @@ class LynxController extends AbstractController {
       
       // Stel boodschap in en redirect naar deze route
       $session = $this->get('session');
-      $session->getFlashBag()->add('notice', 'Lynk added ;)');
+      $session->getFlashBag()->add('notice', '"' . $link->getUrl() . '" added ;)');
       
       return $this->redirectToRoute('lynx_new_link');
     }
