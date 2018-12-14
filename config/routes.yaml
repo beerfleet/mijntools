@@ -16,4 +16,3 @@ lynx_new_link:
   path: /lynx
   controller: App\Controller\LynxController::new_link
   
-
