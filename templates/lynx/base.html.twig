@@ -15,24 +15,28 @@
     {% endblock head %}
 
     <div class="container">
-
       {% block messages %}
-
         <div class="message-ok">
           {% block message_ok %}
+            {% if app.session.flashbag.peekall|length > 0 %}
+              <ul>
+                {% for flash_notices in app.flashes('notice') %}
+                  <li>{{ flash_notices }}</li>
+                  {% endfor %}
+              </ul>
+            {% endif %}
           {% endblock message_ok %}
         </div>
 
         <div class="message-error">
           {% block message_error %}
+            {{ form_errors(form.url) }}
           {% endblock message_error %}
         </div>
-
       {% endblock messages %}
 
       {% block body %}
       {% endblock body %}
-
     </div>
 
     {% block javascripts %}
