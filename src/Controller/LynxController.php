@@ -26,7 +26,10 @@ class LynxController extends AbstractController {
       $em->flush();
       
       // Stel boodschap in en redirect naar deze route
+      $session = $this->get('session');
+      $session->getFlashBag()->add('notice', 'Lynk added ;)');
       
+      return $this->redirectToRoute('lynx_new_link');
     }
 
     return $this->render('lynx/index.html.twig', array(

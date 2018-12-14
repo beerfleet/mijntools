@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : jan
 */
 
-.message-ok {
+.message-ok {  
   width: 100%;
   background-color: #b1dfbb;
   color: #1c7430;
@@ -26,3 +26,10 @@ and open the template in the editor.
   text-align: center;
   padding: 8px;
 }
+
+.message-ok ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 8px;
+}
+
