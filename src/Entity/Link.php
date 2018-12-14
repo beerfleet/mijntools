@@ -8,6 +8,8 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Description of Task
  *
@@ -15,6 +17,11 @@ namespace App\Entity;
  */
 class Link {
 
+  /**
+   * @Assert\NotBlank(
+   *  message = "Please fill out the Url field"
+   * )
+   */
   private $url;
   private $dateSet;
 

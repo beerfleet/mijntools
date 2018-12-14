@@ -11,25 +11,17 @@
   </div>
 {% endblock head %}
 
-{#
-{% block body %}
-  <form action="{{ path("lynx_post_link") }}" method="POST">
-    <div class="form-group">
-      <label for="new-link">Add link</label>
-      <input type="text" class="form-control" id="newlink">
-    </div>
-    <button type="submit" class="btn btn-primary">Add link</button>
-  </form>
-{% endblock %} 
-#}
+{% block messages %}
+  {{ form_errors(form.url) }}
+{% endblock messages %}
 
-{% block body %}
-  {{ form_start(form, {'method': 'POST'} ) }}
+{% block body %}  
+
+  {{ form_start( form, {'method': 'POST', 'attr': {'novalidate':'novalidate'} } ) }}
 
   <div class="form-group">
     {{ form_label(form.url) }}
-    {{ form_errors(form.url) }}
-    {{ form_widget(form.url, {'attr': {'class': 'form-control'} }) }}
+    {{ form_widget(form.url, {'attr': {'class': 'form-control', 'novalidate':''} }) }}
   </div>
 
   <div class="form-group">

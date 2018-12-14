@@ -15,7 +15,13 @@
     {% endblock head %}
 
     <div class="container">
-    {% block body %}{% endblock %}
+      
+    {% block messages %}
+    {% endblock messages %}
+    
+    {% block body %}
+    {% endblock body %}
+    
     </div>
 
   {% block javascripts %}
