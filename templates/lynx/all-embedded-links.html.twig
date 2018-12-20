@@ -1,0 +1,10 @@
+{# embeddable template: all links #}
+
+{% if links|length > 0 %}
+  <ul>
+    {% for link in links %}
+      <li>{{ link.url }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+

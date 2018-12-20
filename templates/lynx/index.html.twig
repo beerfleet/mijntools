@@ -25,5 +25,12 @@
   </div>
 
   {{ form_end(form) }}
+  
+  <div id="all-links">
+    {{ render( controller(
+    'App\\Controller\\LynxController::show_links'
+      )  ) }}
+  </div>
+  
 {% endblock body %}
 
