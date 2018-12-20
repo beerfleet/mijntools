@@ -33,3 +33,10 @@ and open the template in the editor.
   padding: 8px;
 }
 
+/* links list */
+#all-links ul {
+  li {
+    background-color: yellow;
+  }
+  
+}
