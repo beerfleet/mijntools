@@ -24,17 +24,27 @@ class LynxController extends AbstractController {
       $em = $this->getDoctrine()->getManager();
       $em->persist($link);
       $em->flush();
-      
+
       // Stel boodschap in en redirect naar deze route
       $session = $this->get('session');
       $session->getFlashBag()->add('notice', '"' . $link->getUrl() . '" added ;)');
-      
+
       return $this->redirectToRoute('lynx_new_link');
     }
 
     return $this->render('lynx/index.html.twig', array(
           'form' => $form->createView(),
     ));
+  }
+
+  public function show_links() {
+    $em = $this->getDoctrine()->getManager();
+    $repo = $em->getRepository(Link::class);
+    $links = $repo->findAll();
+
+    return $this->render(
+            'lynx/all-embedded-links.html.twig', array('links' => $links)
+    );
   }
 
 }
