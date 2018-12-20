@@ -29,7 +29,7 @@ class Link {
    * @Assert\NotBlank(
    *  message = "Please fill out the Url field"
    * )
-   * @ORM\Column(name="url", type="string", length=1023, unique=true)
+   * @ORM\Column(name="url", type="string", length=191, unique=true)
    */
   private $url;
 
