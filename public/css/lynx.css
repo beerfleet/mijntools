@@ -35,6 +35,7 @@
 #all-links ul li {
   list-style-type: none;
   padding: 5px 3px;
+  border-bottom: 3px white solid;
 }
 
 #all-links ul li:nth-child(odd) {
@@ -48,4 +49,5 @@
 #all-links ul li span.fa-window-close {
   cursor: pointer;
   padding-right: 0;
+  font-size: 1.3em;
 }

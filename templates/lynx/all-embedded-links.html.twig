@@ -3,9 +3,9 @@
 {% if links|length > 0 %}
   <ul>
     {% for link in links %}
-      <li class="row"> 
+      <li class="row" data-link-id="{{ link.id }}"> 
         <span class="col-sm-11">{{ link.url }} </span>
-        <span data-link-id="{{ link.id }}" class="col-sm-1 fas fa-window-close"></span>
+        <span class="col-sm-1 fas fa-window-close"></span>
       </li>
     {% endfor %}
   </ul>
