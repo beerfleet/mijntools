@@ -34,9 +34,23 @@ and open the template in the editor.
 }
 
 /* links list */
+#all-links {}
+
 #all-links ul {
-  li {
-    background-color: yellow;
-  }
-  
+  padding-left: 0;
+  text-align: center;
 }
+
+#all-links ul li {
+  list-style-type: none;
+  padding: 5px 3px;
+}
+
+#all-links ul li:nth-child(odd) {
+  background-color: #e3f2ec;  
+}
+
+#all-links ul li:nth-child(even) {
+  background-color: #F5F5F5;  
+}
+
