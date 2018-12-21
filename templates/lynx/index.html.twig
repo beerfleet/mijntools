@@ -16,7 +16,7 @@
   {{ form_start( form, {'method': 'POST', 'attr': {'novalidate':'novalidate'} } ) }}
 
   <div class="form-group">
-    {{ form_label(form.url) }}
+    <h2>Fragments</h2>
     {{ form_widget(form.url, {'attr': {'class': 'form-control', 'novalidate':''} }) }}
   </div>
 
@@ -24,9 +24,9 @@
     <input type="submit" value="Store" class="form-control">
   </div>
 
-  {{ form_end(form) }}    
+  {{ form_end(form) }}
   
-  <div id="all-links">
+  <div id="all-links" class="bs-glyphicons">
     <hr>
     <h2>List</h2>
     {{ render( controller(
@@ -35,4 +35,3 @@
   </div>
   
 {% endblock body %}
-
