@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace App\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
@@ -18,6 +12,12 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class Link {
 
+  /**
+   * @ORM\ManyToMany(targetEntity="Tag", inversedBy="links")
+   * @ORM\JoinTable(name="users_groups")
+   */
+  private $tags;
+  
   /**
    * @ORM\Id
    * @ORM\GeneratedValue
@@ -37,8 +37,12 @@ class Link {
    * @ORM\Column(type="datetime")
    */
   private $dateSet;
+  
+  public function __construct() {
+    $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+  }
 
-  function getUrl() {
+    function getUrl() {
     return $this->url;
   }
 
@@ -56,6 +60,15 @@ class Link {
 
   function getId() {
     return $this->id;
+  }
+  
+  public function getTags() {
+    return $this->tags;
+  }
+
+  public function addTag(Tag $tag) {
+    $tag->addLink($this);
+    $this->tags[] = $tag;
   }
 
 }
