@@ -27,7 +27,7 @@ class Link {
 
   /**
    * @Assert\NotBlank(
-   *  message = "Please fill out the Url field"
+   *  message = "Please fill out the Fragments field"
    * )
    * @ORM\Column(name="url", type="string", length=191, unique=true)
    */
