@@ -22,6 +22,9 @@ class Tag {
    */
   private $id;
   
+  /**
+   * @ORM\Column(length=140)
+   */
   private $label;
   
   public function __construct() {

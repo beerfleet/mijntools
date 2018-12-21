@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-/** 
+/**
  * @ORM\Entity
  * @UniqueEntity("url")
  */
@@ -17,7 +17,7 @@ class Link {
    * @ORM\JoinTable(name="users_groups")
    */
   private $tags;
-  
+
   /**
    * @ORM\Id
    * @ORM\GeneratedValue
@@ -37,12 +37,12 @@ class Link {
    * @ORM\Column(type="datetime")
    */
   private $dateSet;
-  
+
   public function __construct() {
     $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
   }
 
-    function getUrl() {
+  function getUrl() {
     return $this->url;
   }
 
@@ -61,7 +61,7 @@ class Link {
   function getId() {
     return $this->id;
   }
-  
+
   public function getTags() {
     return $this->tags;
   }
