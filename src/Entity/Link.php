@@ -13,8 +13,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 class Link {
 
   /**
-   * @ORM\ManyToMany(targetEntity="Tag", inversedBy="links")
-   * @ORM\JoinTable(name="users_groups")
+   * @ORM\ManyToMany(targetEntity="Tag", inversedBy="links")   
+   * @ORM\JoinTable(name="link_tags")
    */
   private $tags;
 
