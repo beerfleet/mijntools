@@ -2,17 +2,11 @@ index:
   path: /
   controller: App\Controller\TryStuffController::index
 
-# try_stuff
-try_stuff_output:
-  path: /try/output
-  controller: App\Controller\TryStuffController::index
-  
-try_stuff_new_task:
-  path: /try/new_task
-  controller: App\Controller\TryStuffController::new_task
- 
 # ----------------- LyNX
 lynx_new_link:
   path: /lynx
   controller: App\Controller\LynxController::new_link
-  
+
+lynx_show_links:
+  path: /lynx/show
+  controller: App\Controller\LynxController::show_links

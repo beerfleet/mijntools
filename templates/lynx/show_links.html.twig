@@ -11,18 +11,7 @@
   </div>
 {% endblock head %}
 
-{% block body %}  
-
-  {{ form_start( form, {'method': 'POST', 'attr': {'novalidate':'novalidate'} } ) }}
-  <div class="form-group">
-    <h2>Snippet</h2>
-    {{ form_widget(form.url, {'attr': {'class': 'form-control', 'novalidate':''} }) }}
-  </div>
-
-  <div class="form-group">
-    <input type="submit" value="Store" class="form-control">
-  </div>
-  {{ form_end(form) }}
+{% block body %} 
   
   <div id="all-links" class="bs-glyphicons">
     <hr>

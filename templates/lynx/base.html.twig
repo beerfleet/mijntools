@@ -31,7 +31,9 @@
 
         <div class="message-error">
           {% block message_error %}
-            {{ form_errors(form.url) }}
+            {% if form is defined %}
+              {{ form_errors(form.url) }}
+            {% endif %}
           {% endblock message_error %}
         </div>
       {% endblock messages %}

@@ -36,8 +36,12 @@ class LynxController extends AbstractController {
           'form' => $form->createView(),
     ));
   }
+  
+  public function show_links(Request $request) {
+    return $this->render('lynx/show_links.html.twig', array());
+  }
 
-  public function show_links() {
+  public function show_links_embed() {
     $em = $this->getDoctrine()->getManager();
     $repo = $em->getRepository(Link::class);
     $links = $repo->findAll();
