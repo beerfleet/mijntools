@@ -5,7 +5,7 @@
     {% for link in links %}
       <li class="row" data-link-id="{{ link.id }}">
         <span class="col-lg-11">{{ link.url }} </span>
-        <span class="edit-link col-lg-1">Wijzig</span>
+        <span class="edit-link col-lg-1"><a href="{{ path('lynx_edit_link', {'link_id': link.id} ) }}">Wijzig</a></span>
       </li>
     {% endfor %}
   </ul>

@@ -1,0 +1,25 @@
+{% extends 'lynx/base.html.twig' %}
+
+{% block title %}Wijzig link{% endblock %}
+
+{% block head %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>LyNX</h1>
+      <sub>Keep track of all kinds of links</sub>
+    </div>
+  </div>
+{% endblock head %}
+
+{% block body %}    
+  {{ form_start( form, {'method': 'POST', 'attr': {'novalidate':'novalidate'} } ) }}
+  <div class="form-group">
+    <h2>Wijzig Link</h2>
+    {{ form_widget(form.url, {'attr': {'class': 'form-control', 'novalidate':''} }) }}
+  </div>
+
+  <div class="form-group">
+    <input type="submit" value="Bewaar" class="form-control">
+  </div>
+  {{ form_end(form) }}
+{% endblock body %}

@@ -27,7 +27,7 @@ class LynxController extends AbstractController {
 
       // Stel boodschap in en redirect naar deze route
       $session = $this->get('session');
-      $session->getFlashBag()->add('notice', '"' . $link->getUrl() . '" added ;)');
+      $session->getFlashBag()->add('notice', '"' . $link->getUrl() . '" toegevoegd ;)');
 
       return $this->redirectToRoute('lynx_new_link');
     }
@@ -49,6 +49,34 @@ class LynxController extends AbstractController {
     return $this->render(
             'lynx/all-embedded-links.html.twig', array('links' => $links)
     );
+  }
+  
+  public function edit_link_page(Request $request, $link_id) {
+    $repo = $this->getDoctrine()->getManager()->getRepository(Link::class);
+    $link = $repo->find($link_id);
+    $huidige_link = $link->getUrl();
+
+    $form = $this->createFormBuilder($link)
+        ->add('url', TextType::class)
+        ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isSubmitted() && $form->isValid()) {
+      $link = $form->getData();      
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($link);
+      $em->flush();
+
+      // Stel boodschap in en redirect naar deze route
+      $session = $this->get('session');
+      $session->getFlashBag()->add('notice', '"' . $huidige_link . '" is gewijzigd naar ' . '"' . $link->getUrl() . '"');
+
+      //return $this->redirectToRoute('lynx_edit_link', ['link_id' => $link->getId()]);
+      return $this->redirectToRoute('lynx_show_links');
+    }
+    
+    return $this->render('lynx/edit_link_page.html.twig', ['link' => $link, 'form' => $form->createView()]);
   }
 
 }

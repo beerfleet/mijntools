@@ -39,11 +39,11 @@
 }
 
 #all-links ul li:nth-child(odd) {
-  background-color: #e3f2ec;  
+  background-color: #fbfbfb;
 }
 
 #all-links ul li:nth-child(even) {
-  background-color: #F5F5F5;  
+  background-color: white;  
 }
 
 #all-links ul li span.fa-window-close {
