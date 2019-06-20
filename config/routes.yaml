@@ -10,3 +10,9 @@ lynx_new_link:
 lynx_show_links:
   path: /lynx/show
   controller: App\Controller\LynxController::show_links
+  
+lynx_edit_link:
+  path: /lynx/edit/{link_id}
+  controller: App\Controller\LynxController::edit_link_page
+  requirements:
+    link_id: '\d+'
