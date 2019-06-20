@@ -3,9 +3,9 @@
 {% if links|length > 0 %}
   <ul>
     {% for link in links %}
-      <li class="row" data-link-id="{{ link.id }}"> 
-        <span class="col-sm-10">{{ link.url }} </span>
-        <span class="col-sm-2"><a href="#"><button type="button" class="btn btn-secondary">Editeer tags</button></a></span>
+      <li class="row" data-link-id="{{ link.id }}">
+        <span class="col-lg-11">{{ link.url }} </span>
+        <span class="edit-link col-lg-1">Wijzig</span>
       </li>
     {% endfor %}
   </ul>
