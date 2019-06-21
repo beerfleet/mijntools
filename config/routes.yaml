@@ -1,6 +1,10 @@
+#index:
+#  path: /
+#  controller: App\Controller\TryStuffController::index
+
 index:
   path: /
-  controller: App\Controller\TryStuffController::index
+  controller: App\Controller\LynxController::new_link
 
 # ----------------- LyNX
 lynx_new_link:
