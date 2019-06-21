@@ -4,18 +4,17 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use App\Form\LinkType;
 use App\Entity\Link;
 
 class LynxController extends AbstractController {
 
-  public function new_link(Request $request) {
+  public function new_link(Request $request): Response {
     $link = new Link();
 
-    $form = $this->createFormBuilder($link)
-        ->add('url', TextType::class)
-        ->getForm();
-
+    $form = $this->createForm(LinkType::class, $link);
     $form->handleRequest($request);
 
     if ($form->isSubmitted() && $form->isValid()) {
@@ -29,7 +28,7 @@ class LynxController extends AbstractController {
       $session = $this->get('session');
       $session->getFlashBag()->add('notice', '"' . $link->getUrl() . '" toegevoegd ;)');
 
-      return $this->redirectToRoute('lynx_new_link');
+      return $this->redirectToRoute('lynx_show_links');
     }
 
     return $this->render('lynx/index.html.twig', array(

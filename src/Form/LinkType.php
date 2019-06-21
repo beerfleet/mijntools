@@ -13,7 +13,7 @@ class LinkType extends AbstractType
     {
         $builder
             ->add('url')
-            ->add('dateSet')
+            //->add('dateSet')
             ->add('tags')
         ;
     }
